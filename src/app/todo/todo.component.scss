@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap");
+
+.inputSection {
+  font-family: "Barlow";
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  height: 23px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+input:hover {
+  border-color: rgba(0, 0, 255, 0.2);
+}
+
+section {
+  font-family: "Barlow";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  height: 100vh;
+}
+ol {
+  counter-increment: liste;
+}
+p {
+  margin: 5px 10px 5px;
+}
+p::before {
+  border-radius: 10px;
+  padding: 0 20px 6px;
+  margin-right: 8px;
+  background: #678;
+  content: counter(liste);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+
+  border-radius: 10px;
+  box-shadow: 4px 4px 2px 1px rgba(0, 0, 255, 0.2);
+  background-color: rgba(123, 123, 173, 0.2);
+}
+
+.add {
+  align-self: center;
+  cursor: pointer;
+  font-size: 20px;
+  width: 30px;
+  border-radius: 5px;
+}
+.delete {
+  align-self: center;
+  cursor: pointer;
+}
+:focus::placeholder {
+  color: transparent;
+}

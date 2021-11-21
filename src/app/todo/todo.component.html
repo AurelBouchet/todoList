@@ -1,0 +1,17 @@
+<div class="inputSection">
+  <input
+    type="text"
+    placeholder="nouvelle tâche"
+    [(ngModel)]="inputTask"
+  /><button class="add" (click)="addTask()">+</button>
+</div>
+<section>
+  <ol *ngFor="let task of todo; index as i">
+    <li>
+      <p>
+        {{ task }}
+      </p>
+      <button class="delete" (click)="deleteTask(i)">x</button>
+    </li>
+  </ol>
+</section>
