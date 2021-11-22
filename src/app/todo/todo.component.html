@@ -1,15 +1,16 @@
 <div class="inputSection">
-  <input
-    type="text"
-    placeholder="nouvelle tâche"
-    [(ngModel)]="inputTask"
-  /><button class="add" (click)="addTask()">+</button>
+  <input type="text" placeholder="nouvelle tâche" [(ngModel)]="task" /><button
+    class="add"
+    (click)="addTask()"
+  >
+    +
+  </button>
 </div>
 <section>
-  <ol *ngFor="let task of todo; index as i">
+  <ol *ngFor="let todo of todos; index as i">
     <li>
       <p>
-        {{ task }}
+        {{ todo }}
       </p>
       <button class="delete" (click)="deleteTask(i)">x</button>
     </li>
