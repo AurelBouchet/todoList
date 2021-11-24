@@ -13,7 +13,7 @@ export class TodoComponent implements OnInit {
   }
   ngOnInit() {
     this.recordedList = JSON.parse(localStorage.getItem('list') || '{}');
-    if (this.todos.length > 0)
+    if (this.todos !== 0)
       for (let todo of this.recordedList) {
         this.todos.push(todo);
       }
