@@ -1,7 +1,7 @@
 <div class="inputSection">
   <input type="text" placeholder="nouvelle tâche" [(ngModel)]="todo" /><button
     class="add"
-    (click)="addTask()"
+    (click)="addTodo()"
   >
     +
   </button>
@@ -13,7 +13,7 @@
       <p>
         {{ todo }}
       </p>
-      <button class="delete" (click)="deleteTask(i)">x</button>
+      <button class="delete" (click)="deleteTodo(i)">x</button>
     </li>
   </ol>
 </section>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { Interface } from './interface';
 
 @Component({
   selector: 'app-todo',
@@ -11,15 +12,19 @@ export class TodoComponent implements OnInit {
     this.todos = [];
   }
   ngOnInit() {
-    this.lastTask = JSON.parse(localStorage.getItem('list') || '{}');
-    for (let todo of this.lastTask) {
-      this.todos.push(todo);
+    this.recordedList = JSON.parse(localStorage.getItem('list') || '{}');
+    if (this.todos.length > 0)
+      for (let todo of this.recordedList) {
+        this.todos.push(todo);
+      }
+    else {
+      this.todos;
     }
   }
 
-  lastTask: any;
-  todo: string | undefined;
-  todos: any;
+  recordedList: Interface['recordedList'];
+  todo: Interface['todo'];
+  todos: Interface['todos'];
 
   alert = Swal.mixin({
     toast: true,
@@ -29,7 +34,7 @@ export class TodoComponent implements OnInit {
     timer: 2000,
   });
 
-  addTask() {
+  addTodo() {
     this.todo
       ? this.todos.push(this.todo)
       : this.alert.fire({
@@ -41,7 +46,7 @@ export class TodoComponent implements OnInit {
     this.todo = '';
   }
 
-  deleteTask(i: number) {
+  deleteTodo(i: number) {
     this.todos.splice(i, 1);
     const list = JSON.parse(localStorage.getItem('list') || '{}');
     for (let i of list) localStorage.removeItem(this.todos);
@@ -52,8 +57,32 @@ export class TodoComponent implements OnInit {
     localStorage.setItem('list', JSON.stringify(this.todos));
   }
 
+  swal = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger',
+    },
+    buttonsStyling: false,
+  });
+
   deleteAll() {
-    localStorage.removeItem('list');
-    this.todos = [];
+    this.swal
+      .fire({
+        title: 'Etes-vous sûr.e?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, supprimer la liste',
+        cancelButtonText: 'Annuler',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.swal.fire('Votre liste a été supprimée!', '', 'success');
+          localStorage.removeItem('list');
+          this.todos = [];
+        } else {
+          null;
+        }
+      });
   }
 }
