@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -10,14 +11,16 @@ export class TodoComponent implements OnInit {
     this.todos = [];
   }
   ngOnInit() {
-    this.lastTask = localStorage.getItem('2');
-    console.log(this.lastTask);
-    this.todos.push(this.lastTask);
+    this.lastTask = JSON.parse(localStorage.getItem('list') || '{}');
+    for (let todo of this.lastTask) {
+      this.todos.push(todo);
+    }
   }
-  lastTask: any | [];
-  id: number = Date.now();
-  task: any;
+
+  lastTask: any;
+  todo: string | undefined;
   todos: any;
+
   alert = Swal.mixin({
     toast: true,
     position: 'top-start',
@@ -27,22 +30,30 @@ export class TodoComponent implements OnInit {
   });
 
   addTask() {
-    this.task
-      ? this.todos.push(this.task)
+    this.todo
+      ? this.todos.push(this.todo)
       : this.alert.fire({
           icon: 'warning',
           iconColor: '#f27474',
           title: 'Aucune tâche à ajouter',
         });
-    localStorage.setItem(JSON.stringify(this.id), JSON.stringify(this.task));
-    this.task = '';
+    localStorage.setItem('list', JSON.stringify(this.todos));
+    this.todo = '';
   }
 
   deleteTask(i: number) {
     this.todos.splice(i, 1);
+    const list = JSON.parse(localStorage.getItem('list') || '{}');
+    for (let i of list) localStorage.removeItem(this.todos);
     this.alert.fire({
       icon: 'success',
       title: 'Votre tâche a bien été supprimée!',
     });
+    localStorage.setItem('list', JSON.stringify(this.todos));
+  }
+
+  deleteAll() {
+    localStorage.removeItem('list');
+    this.todos = [];
   }
 }
