@@ -11,14 +11,14 @@ export class TodoComponent implements OnInit {
   constructor() {
     this.todos = [];
   }
+
   ngOnInit() {
     this.recordedList = JSON.parse(localStorage.getItem('list') || '{}');
-    if (this.todos == !0) {
+    console.log(this.recordedList);
+    if (this.todos) {
       for (let todo of this.recordedList) {
         this.todos.push(todo);
       }
-    } else {
-      this.todos;
     }
   }
   recordedList: Interface['recordedList'];
