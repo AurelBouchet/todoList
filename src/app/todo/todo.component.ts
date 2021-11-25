@@ -19,6 +19,8 @@ export class TodoComponent implements OnInit {
       for (let todo of this.recordedList) {
         this.todos.push(todo);
       }
+    } else {
+      this.todos;
     }
   }
   recordedList: Interface['recordedList'];
