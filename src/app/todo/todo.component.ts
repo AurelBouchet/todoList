@@ -13,7 +13,7 @@ export class TodoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.recordedList = JSON.parse(localStorage.getItem('list') || '{}');
+    this.recordedList = JSON.parse(localStorage.getItem('list') || '[]');
     console.log(this.recordedList);
     if (this.todos) {
       for (let todo of this.recordedList) {
@@ -29,7 +29,7 @@ export class TodoComponent implements OnInit {
 
   alert = Swal.mixin({
     toast: true,
-    position: 'top-start',
+    position: 'top',
     showConfirmButton: false,
     timerProgressBar: true,
     timer: 2000,
