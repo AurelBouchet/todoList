@@ -1,22 +1,14 @@
 <main>
-  <div class="inputSection">
-    <input type="text" placeholder="nouvelle tâche" [(ngModel)]="todo" /><button
-      class="add"
-      (click)="addTodo()"
-    >
-      +
-    </button>
-  </div>
-  <button class="deleteAll" (click)="deleteAll()">Supprimer tout</button>
-
-  <section>
-    <ol *ngFor="let todo of todos; index as i">
-      <li>
-        <p>
-          {{ todo }}
-        </p>
-        <button class="delete" (click)="deleteTodo(i)">x</button>
-      </li>
-    </ol>
-  </section>
+  <app-child (newTodo)="addTodo($event)"></app-child>
+  <button *ngIf="todos.length > 0" class="deleteAll" (click)="deleteAll()">
+    Supprimer tout
+  </button>
+  <ol *ngFor="let todo of todos; index as i">
+    <li>
+      <p>
+        {{ todo }}
+      </p>
+      <button class="delete" (click)="deleteTodo(i)">x</button>
+    </li>
+  </ol>
 </main>

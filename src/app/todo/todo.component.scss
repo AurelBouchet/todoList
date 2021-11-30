@@ -8,39 +8,7 @@ main {
   height: 90vh;
   overflow-x: hidden;
   border: 5px solid;
-}
-
-.inputSection {
-  font-family: "Barlow";
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin: 25px auto;
-  padding-right: 10px;
-  padding-top: 55px;
-}
-.add {
-  order: -1;
-  cursor: pointer;
-  font-size: 20px;
-  width: 30px;
-  border-radius: 5px;
-  margin-right: 5px;
-  color: rgb(138, 179, 219);
-}
-
-.add:hover {
-  color: black;
-}
-
-input {
-  height: 25px;
-  width: 220px;
-  border-radius: 5px;
-}
-
-input:hover {
-  border-color: rgba(0, 0, 255, 0.2);
+  border-radius: 20px;
 }
 
 section {
@@ -50,6 +18,10 @@ section {
   align-items: baseline;
 }
 ol {
+  font-family: "Barlow";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
   counter-increment: liste;
 }
 p {

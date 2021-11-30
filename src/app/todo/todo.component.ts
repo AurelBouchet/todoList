@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { Interface } from './interface';
 
 @Component({
   selector: 'app-todo',
@@ -12,9 +11,11 @@ export class TodoComponent implements OnInit {
     this.todos = [];
   }
 
+  recordedList: any;
+  todos: any;
+
   ngOnInit() {
     this.recordedList = JSON.parse(localStorage.getItem('list') || '[]');
-    console.log(this.recordedList);
     if (this.todos) {
       for (let todo of this.recordedList) {
         this.todos.push(todo);
@@ -23,9 +24,6 @@ export class TodoComponent implements OnInit {
       this.todos;
     }
   }
-  recordedList: Interface['recordedList'];
-  todo: Interface['todo'];
-  todos: Interface['todos'];
 
   alert = Swal.mixin({
     toast: true,
@@ -35,16 +33,15 @@ export class TodoComponent implements OnInit {
     timer: 2000,
   });
 
-  addTodo() {
-    this.todo
-      ? this.todos.push(this.todo)
+  addTodo(todo: string) {
+    this.todos
+      ? this.todos.push(todo)
       : this.alert.fire({
           icon: 'warning',
           iconColor: '#f27474',
           title: 'Aucune tâche à ajouter',
         });
     localStorage.setItem('list', JSON.stringify(this.todos));
-    this.todo = '';
   }
 
   deleteTodo(i: number) {

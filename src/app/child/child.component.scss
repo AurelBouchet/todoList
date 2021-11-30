@@ -1,0 +1,32 @@
+.inputSection {
+  font-family: "Barlow";
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 25px auto;
+  padding-right: 10px;
+  padding-top: 55px;
+}
+.add {
+  order: -1;
+  cursor: pointer;
+  font-size: 20px;
+  width: 30px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: rgb(138, 179, 219);
+}
+
+.add:hover {
+  color: black;
+}
+
+input {
+  height: 25px;
+  width: 220px;
+  border-radius: 5px;
+}
+
+input:hover {
+  border-color: rgba(0, 0, 255, 0.2);
+}
