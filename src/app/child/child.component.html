@@ -1,4 +1,6 @@
-<div class="inputSection">
-  <input type="text" autofocus #todo />
-  <button class="add" (click)="addTodo(todo.value)">+</button>
-</div>
+<form>
+  <div class="inputSection">
+    <input type="text" #todo autofocus onfocus="this.value=''" />
+    <button class="add" (click)="addTodo(todo.value)">+</button>
+  </div>
+</form>

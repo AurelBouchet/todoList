@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +13,7 @@ export class TodoComponent implements OnInit {
 
   recordedList: any;
   todos: any;
-
+  value: any;
   ngOnInit() {
     this.recordedList = JSON.parse(localStorage.getItem('list') || '[]');
     if (this.todos) {
@@ -34,13 +34,7 @@ export class TodoComponent implements OnInit {
   });
 
   addTodo(todo: string) {
-    this.todos
-      ? this.todos.push(todo)
-      : this.alert.fire({
-          icon: 'warning',
-          iconColor: '#f27474',
-          title: 'Aucune tâche à ajouter',
-        });
+    this.todos.push(todo);
     localStorage.setItem('list', JSON.stringify(this.todos));
   }
 
