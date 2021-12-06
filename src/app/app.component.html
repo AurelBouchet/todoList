@@ -1,7 +1,14 @@
-<ul>
-  <li>
-    <a [routerLink]="['/todo']">My Todo List</a>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
+<main>
+  <app-child (newTodo)="addTodo($event)"></app-child>
+  <button *ngIf="todos.length > 0" class="deleteAll" (click)="deleteAll()">
+    Supprimer tout
+  </button>
+  <ol *ngFor="let todo of todos; index as i">
+    <li>
+      <p>
+        {{ todo }}
+      </p>
+      <button class="delete" (click)="deleteTodo(i)">x</button>
+    </li>
+  </ol>
+</main>

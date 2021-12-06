@@ -1,74 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap");
-
-main {
-  background-image: url("../../assets/blank.jpg"), url("../../assets/desk.jpg");
-  background-size: contain, contain;
-  background-position: right, left;
-  background-repeat: no-repeat;
-  height: 90vh;
-  overflow-x: hidden;
-  border: 5px solid;
-  border-radius: 20px;
-}
-
-section {
+.inputSection {
   font-family: "Barlow";
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-}
-ol {
-  font-family: "Barlow";
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  counter-increment: liste;
-}
-p {
-  margin: 5px 10px 5px;
-}
-p::before {
-  border-radius: 2px;
-  padding: 0 20px 6px;
-  margin-right: 8px;
-  background: rgb(138, 179, 219);
-  content: counter(liste);
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
-
-li {
-  list-style-type: none;
   display: flex;
   flex-direction: row;
-  font-size: 24px;
-  height: 50px;
-  border-radius: 2px;
-  box-shadow: 4px 4px 2px 1px rgba(82, 82, 109, 0.2);
-  background-color: white;
+  justify-content: flex-end;
+  margin: 25px auto;
+  padding-right: 10px;
+  padding-top: 55px;
 }
-
-.delete {
-  align-self: center;
+.add {
   cursor: pointer;
-  margin-right: 5px;
-}
-
-.deleteAll {
+  font-size: 20px;
+  width: 30px;
   border-radius: 5px;
-  margin-top: 55px;
-  margin-right: 25px;
-  float: right;
-  cursor: pointer;
-  height: 50px;
   color: rgb(138, 179, 219);
-  font-family: "Barlow";
+  position: fixed;
+  float: right;
 }
-.deleteAll:hover {
+
+.add:hover {
   color: black;
 }
 
-:focus::placeholder {
-  color: transparent;
+input {
+  height: 25px;
+  width: 220px;
+  border-radius: 5px;
+  position: fixed;
+  float: right;
+}
+
+input:hover {
+  border-color: rgba(0, 0, 255, 0.2);
 }

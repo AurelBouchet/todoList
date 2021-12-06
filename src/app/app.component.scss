@@ -1,15 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap");
 
-ul {
-  list-style: none;
+main {
+  background-image: url("../assets/desk2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 95vh;
+  overflow-x: hidden;
+  border: 5px solid;
+  border-radius: 20px;
 }
-a {
-  display: flex;
-  justify-content: center;
+
+ol {
   font-family: "Barlow";
-  font-size: 12px;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  counter-increment: liste;
 }
-a:visited {
+p {
+  margin: 5px 10px 5px;
+}
+p::before {
+  border-radius: 2px;
+  padding: 0 20px 6px;
+  margin-right: 8px;
+  background: rgb(138, 179, 219);
+  content: counter(liste);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+  height: 50px;
+  border-radius: 2px;
+  box-shadow: 4px 4px 2px 1px rgba(82, 82, 109, 0.2);
+  background-color: white;
+}
+
+.delete {
+  align-self: center;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.deleteAll {
+  border-radius: 5px;
+  margin-top: 55px;
+  margin-right: 25px;
+  cursor: pointer;
+  height: 50px;
+  color: rgb(138, 179, 219);
+  font-family: "Barlow";
+  position: fixed;
+}
+.deleteAll:hover {
   color: black;
+}
+
+:focus::placeholder {
+  color: transparent;
 }
