@@ -1,17 +1,17 @@
 <main>
-  <div class="inputSection">
+  <section>
     <input type="text" [(ngModel)]="todo" />
-    <button class="add" (click)="addTodo()">+</button>
-    <button *ngIf="todos.length > 0" class="deleteAll" (click)="deleteAll()">
+    <button class="rounded-b-sm" (click)="addTodo()">+</button>
+    <button *ngIf="todos.length > 0" (click)="deleteAll()">
       Supprimer tout
     </button>
-  </div>
+  </section>
   <ol *ngFor="let todo of todos; index as i">
     <li>
-      <p>
+      <p class="rounded-b-sm">
         {{ todo }}
       </p>
-      <button class="delete" (click)="deleteTodo(i)">x</button>
+      <button (click)="deleteTodo(i)">x</button>
     </li>
   </ol>
 </main>

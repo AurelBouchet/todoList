@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap");
 
+//variables
+$blue-sky-color: rgb(138, 179, 219);
+$font: "Barlow";
+//variables
+
 main {
   background-image: url("../assets/desk2.jpg");
   background-size: cover;
@@ -8,95 +13,91 @@ main {
   overflow-x: hidden;
   border: 5px solid;
   border-radius: 20px;
+
+  section {
+    font-family: $font;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 25px auto;
+    padding-right: 10px;
+    padding-top: 55px;
+
+    input {
+      height: 25px;
+      width: 220px;
+      border-radius: 5px;
+      position: fixed;
+    }
+
+    input:hover {
+      border-color: $blue-sky-color;
+    }
+
+    input + button {
+      cursor: pointer;
+      font-size: 20px;
+      width: 30px;
+      border-radius: 5px;
+      color: $blue-sky-color;
+      position: fixed;
+    }
+
+    input + button:hover {
+      color: black;
+    }
+
+    button + button {
+      border-radius: 5px;
+      margin-top: 55px;
+      margin-right: 25px;
+      cursor: pointer;
+      height: 50px;
+      color: $blue-sky-color;
+      font-family: $font;
+      position: fixed;
+    }
+
+    button + button:hover {
+      color: black;
+    }
+  }
 }
 
 ol {
-  font-family: "Barlow";
+  font-family: $font;
   display: flex;
   flex-direction: column;
   align-items: baseline;
   counter-increment: liste;
-}
+  li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    height: 50px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px 1px $blue-sky-color;
+    background-color: white;
 
-p {
-  margin: 5px 10px 5px;
-}
-p::before {
-  border-radius: 2px;
-  padding: 0 20px 6px;
-  margin-right: 8px;
-  background: rgb(138, 179, 219);
-  content: counter(liste);
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
+    p {
+      margin: 5px 10px 5px;
+    }
+    p::before {
+      border-radius: 2px;
+      padding: 0 20px 6px;
+      margin-right: 8px;
+      background: $blue-sky-color;
+      content: counter(liste);
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
 
-li {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  font-size: 24px;
-  height: 50px;
-  border-radius: 2px;
-  box-shadow: 4px 4px 2px 1px rgba(82, 82, 109, 0.2);
-  background-color: white;
-}
-
-.delete {
-  align-self: center;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-.deleteAll {
-  border-radius: 5px;
-  margin-top: 55px;
-  margin-right: 25px;
-  cursor: pointer;
-  height: 50px;
-  color: rgb(138, 179, 219);
-  font-family: "Barlow";
-  position: fixed;
-}
-.deleteAll:hover {
-  color: black;
-}
-
-:focus::placeholder {
-  color: transparent;
-}
-.inputSection {
-  font-family: "Barlow";
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin: 25px auto;
-  padding-right: 10px;
-  padding-top: 55px;
-}
-.add {
-  cursor: pointer;
-  font-size: 20px;
-  width: 30px;
-  border-radius: 5px;
-  color: rgb(138, 179, 219);
-  position: fixed;
-  float: right;
-}
-
-.add:hover {
-  color: black;
-}
-
-input {
-  height: 25px;
-  width: 220px;
-  border-radius: 5px;
-  position: fixed;
-  float: right;
-}
-
-input:hover {
-  border-color: rgba(0, 0, 255, 0.2);
+    p + button {
+      align-self: center;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+  }
 }
