@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   constructor() {
     this.todos = [];
   }
-
+  todo: any;
   recordedList: any;
   todos: any;
   value: any;
@@ -33,9 +33,10 @@ export class AppComponent implements OnInit {
     timer: 2000,
   });
 
-  addTodo(todo: string) {
-    this.todos.push(todo);
+  addTodo() {
+    this.todos.push(this.todo);
     localStorage.setItem('list', JSON.stringify(this.todos));
+    this.todo = '';
   }
 
   deleteTodo(i: number) {

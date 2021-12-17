@@ -1,8 +1,11 @@
 <main>
-  <app-child (newTodo)="addTodo($event)"></app-child>
-  <button *ngIf="todos.length > 0" class="deleteAll" (click)="deleteAll()">
-    Supprimer tout
-  </button>
+  <div class="inputSection">
+    <input type="text" [(ngModel)]="todo" />
+    <button class="add" (click)="addTodo()">+</button>
+    <button *ngIf="todos.length > 0" class="deleteAll" (click)="deleteAll()">
+      Supprimer tout
+    </button>
+  </div>
   <ol *ngFor="let todo of todos; index as i">
     <li>
       <p>
