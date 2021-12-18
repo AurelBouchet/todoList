@@ -13,8 +13,9 @@ main {
   overflow-x: hidden;
   border: 5px solid;
   border-radius: 20px;
+  grid-template-columns: 1fr 1fr 200px;
 
-  section {
+  aside {
     font-family: $font;
     display: flex;
     flex-direction: row;
@@ -23,24 +24,12 @@ main {
     padding-right: 10px;
     padding-top: 55px;
 
-    input {
-      height: 25px;
-      width: 220px;
-      border-radius: 5px;
-      position: fixed;
-    }
-
-    input:hover {
-      border-color: $blue-sky-color;
-    }
-
     input + button {
-      cursor: pointer;
-      font-size: 20px;
+      font-size: 25px;
       width: 30px;
       border-radius: 5px;
       color: $blue-sky-color;
-      position: fixed;
+      margin-top: 2px;
     }
 
     input + button:hover {
@@ -48,14 +37,10 @@ main {
     }
 
     button + button {
-      border-radius: 5px;
       margin-top: 55px;
       margin-right: 25px;
-      cursor: pointer;
-      height: 50px;
       color: $blue-sky-color;
       font-family: $font;
-      position: fixed;
     }
 
     button + button:hover {
@@ -79,6 +64,7 @@ ol {
     border-radius: 2px;
     box-shadow: 2px 2px 2px 1px $blue-sky-color;
     background-color: white;
+    margin-top: 20px;
 
     p {
       margin: 5px 10px 5px;
@@ -96,8 +82,8 @@ ol {
 
     p + button {
       align-self: center;
-      cursor: pointer;
       margin-right: 5px;
+      padding-bottom: 0.75rem;
     }
   }
 }

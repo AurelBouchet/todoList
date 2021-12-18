@@ -1,17 +1,54 @@
 <main>
-  <section>
-    <input type="text" [(ngModel)]="todo" />
-    <button class="rounded-b-sm" (click)="addTodo()">+</button>
-    <button *ngIf="todos.length > 0" (click)="deleteAll()">
+  <h1>My todo list</h1>
+  <aside>
+    <input
+      class="
+        fixed
+        focus-border-blue-600
+        h-8
+        px-6
+        m-1
+        rounded-lg
+        border-2 border-blue-600
+        hover:border-blue-700
+      "
+      type="text"
+      autofocus
+      [(ngModel)]="todo"
+    />
+    <button class="fixed" (click)="addTodo()">+</button>
+    <button
+      class="
+        fixed
+        pointer
+        h-12
+        px-6
+        m-2
+        transition-colors
+        duration-200
+        bg-blue-600
+        rounded-lg
+        hover:bg-blue-700
+      "
+      *ngIf="todos.length > 0"
+      (click)="deleteAll()"
+    >
       Supprimer tout
     </button>
+  </aside>
+  <section>
+    <ol *ngFor="let todo of todos; index as i">
+      <li>
+        <p>
+          {{ todo }}
+        </p>
+        <button
+          class="pointer h-8 px-3 bg-blue-600 rounded-lg"
+          (click)="deleteTodo(i)"
+        >
+          x
+        </button>
+      </li>
+    </ol>
   </section>
-  <ol *ngFor="let todo of todos; index as i">
-    <li>
-      <p class="rounded-b-sm">
-        {{ todo }}
-      </p>
-      <button (click)="deleteTodo(i)">x</button>
-    </li>
-  </ol>
 </main>

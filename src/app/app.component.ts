@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   todo: any;
   recordedList: any;
   todos: any;
-  value: any;
+
   ngOnInit() {
     this.recordedList = JSON.parse(localStorage.getItem('list') || '[]');
     if (this.todos) {
@@ -34,7 +34,13 @@ export class AppComponent implements OnInit {
   });
 
   addTodo() {
-    this.todos.push(this.todo);
+    this.todo
+      ? this.todos.push(this.todo)
+      : this.alert.fire({
+          icon: 'warning',
+          iconColor: '#f27474',
+          title: 'Aucune tâche à ajouter',
+        });
     localStorage.setItem('list', JSON.stringify(this.todos));
     this.todo = '';
   }
