@@ -5,6 +5,23 @@ $blue-sky-color: rgb(138, 179, 219);
 $font: "Barlow";
 //variables
 
+h1 {
+  font-family: $font;
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
 main {
   background-image: url("../assets/desk2.jpg");
   background-size: cover;
@@ -13,7 +30,6 @@ main {
   overflow-x: hidden;
   border: 5px solid;
   border-radius: 20px;
-  grid-template-columns: 1fr 1fr 200px;
 
   aside {
     font-family: $font;
