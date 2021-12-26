@@ -75,6 +75,7 @@ export class AppComponent implements OnInit {
         confirmButtonText: 'Oui, supprimer la liste',
         confirmButtonColor: '#8ab3db',
         cancelButtonText: 'Annuler  ',
+        cancelButtonColor: 'red',
         reverseButtons: true,
       })
       .then((result) => {
