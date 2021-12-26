@@ -73,8 +73,7 @@ export class AppComponent implements OnInit {
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: '  Oui, supprimer la liste',
-
-        cancelButtonText: 'Annuler',
+        cancelButtonText: 'Annuler  ',
         reverseButtons: true,
       })
       .then((result) => {
