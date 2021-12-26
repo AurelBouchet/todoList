@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-
+/src/tailwind.scss
 # profiling files
 chrome-profiler-events*.json
 
