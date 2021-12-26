@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap");
 
 //variables
-$blue-sky-list: rgb(138, 179, 219);
+$blue-sky-list: #8ab3db;
 $font-list: "Barlow";
 $light-list: #f8ffe5;
 //variables
@@ -42,6 +42,7 @@ main {
 
     input + button {
       font-size: 25px;
+      margin-right: 5px;
       width: 30px;
       border-radius: 5px;
       color: $blue-sky-list;
@@ -83,7 +84,7 @@ ol {
     }
     p::before {
       border-radius: 2px;
-      padding: 0 20px 6px;
+      padding: 5px 20px 6px;
       margin-right: 8px;
       background: $blue-sky-list;
       content: counter(liste);
@@ -93,6 +94,7 @@ ol {
     }
 
     p + button {
+      padding-top: 7px;
       margin-right: 5px;
       padding-bottom: 0.75rem;
     }

@@ -72,7 +72,8 @@ export class AppComponent implements OnInit {
         title: 'Êtes-vous sûr.e?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: '  Oui, supprimer la liste',
+        confirmButtonText: 'Oui, supprimer la liste',
+        confirmButtonColor: '#8ab3db',
         cancelButtonText: 'Annuler  ',
         reverseButtons: true,
       })
