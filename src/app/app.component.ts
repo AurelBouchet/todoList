@@ -69,10 +69,11 @@ export class AppComponent implements OnInit {
   deleteAll() {
     this.swal
       .fire({
-        title: 'Etes-vous sûr.e?',
+        title: 'Êtes-vous sûr.e?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Oui, supprimer la liste',
+        confirmButtonText: '  Oui, supprimer la liste',
+
         cancelButtonText: 'Annuler',
         reverseButtons: true,
       })
