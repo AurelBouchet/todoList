@@ -37,6 +37,7 @@ export class AppComponent implements OnInit {
     this.todo
       ? this.todos.push(this.todo)
       : this.alert.fire({
+          position: 'center',
           icon: 'warning',
           iconColor: '#f27474',
           title: 'Aucune tâche à ajouter',
@@ -50,6 +51,7 @@ export class AppComponent implements OnInit {
     const list = JSON.parse(localStorage.getItem('list') || '{}');
     for (let i of list) localStorage.removeItem(this.todos);
     this.alert.fire({
+      position: 'center',
       icon: 'success',
       title: 'Votre tâche a bien été supprimée!',
     });

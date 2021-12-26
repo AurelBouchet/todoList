@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap");
 
 //variables
-$blue-sky-color: rgb(138, 179, 219);
-$font: "Barlow";
+$blue-sky-list: rgb(138, 179, 219);
+$font-list: "Barlow";
+$light-list: #f8ffe5;
 //variables
 
 h1 {
-  font-family: $font;
+  font-family: $font-list;
   animation-duration: 2s;
   animation-name: slidein;
+  background-color: $light-list;
+  border: solid 3px $blue-sky-list;
 }
 
 @keyframes slidein {
@@ -24,18 +27,15 @@ h1 {
 }
 main {
   background-image: url("../assets/desk2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 95vh;
-  overflow-x: hidden;
   border: 5px solid;
   border-radius: 20px;
 
+  input {
+    background-color: $light-list;
+  }
   aside {
-    font-family: $font;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    font-family: $font-list;
     margin: 25px auto;
     padding-right: 10px;
     padding-top: 55px;
@@ -44,7 +44,7 @@ main {
       font-size: 25px;
       width: 30px;
       border-radius: 5px;
-      color: $blue-sky-color;
+      color: $blue-sky-list;
       margin-top: 2px;
     }
 
@@ -55,8 +55,8 @@ main {
     button + button {
       margin-top: 55px;
       margin-right: 25px;
-      color: $blue-sky-color;
-      font-family: $font;
+      color: $blue-sky-list;
+      font-family: $font-list;
     }
 
     button + button:hover {
@@ -66,10 +66,7 @@ main {
 }
 
 ol {
-  font-family: $font;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
+  font-family: $font-list;
   counter-increment: liste;
   li {
     list-style-type: none;
@@ -78,18 +75,18 @@ ol {
     font-size: 24px;
     height: 50px;
     border-radius: 2px;
-    box-shadow: 2px 2px 2px 1px $blue-sky-color;
-    background-color: white;
+    box-shadow: 2px 2px 2px 1px $blue-sky-list;
+    background-color: $light-list;
     margin-top: 20px;
 
     p {
-      margin: 5px 10px 5px;
+      margin: 7px 10px 5px;
     }
     p::before {
       border-radius: 2px;
       padding: 0 20px 6px;
       margin-right: 8px;
-      background: $blue-sky-color;
+      background: $blue-sky-list;
       content: counter(liste);
       font-size: 24px;
       font-weight: bold;

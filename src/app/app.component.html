@@ -1,4 +1,4 @@
-<main>
+<main class="overflow-x-hidden bg-cover bg-no-repeat">
   <h1
     class="
       mt-8
@@ -10,7 +10,7 @@
   >
     My todo list
   </h1>
-  <aside>
+  <aside class="flex flex-row justify-end">
     <input
       class="
         fixed
@@ -34,11 +34,15 @@
         h-12
         px-6
         m-2
+        rounded-lg
         transition-colors
         duration-200
-        bg-blue-600
-        rounded-lg
-        hover:bg-blue-700
+        bg-gradient-to-r
+        from-blue-800
+        to-blue-600
+        hover:
+        from-blue-600
+        hover:to-purple-200
       "
       *ngIf="todos.length > 0"
       (click)="deleteAll()"
@@ -47,7 +51,10 @@
     </button>
   </aside>
   <section>
-    <ol *ngFor="let todo of todos; index as i">
+    <ol
+      class="flex flex-column items-baseline"
+      *ngFor="let todo of todos; index as i"
+    >
       <li>
         <p>
           {{ todo }}
