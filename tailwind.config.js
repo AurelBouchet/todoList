@@ -1,5 +1,7 @@
 module.exports = {
-  purge: ["./src/**/*.html, tailwind.config.scss"],
+  purge: [
+    "./src/app.component.html, ./src/app.component.scss, tailwind.config.scss",
+  ],
   darkMode: false, // or 'media' or 'class'
   content: ["./src/**/*.html, scss"],
   theme: {
