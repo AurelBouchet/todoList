@@ -1,1 +1,4 @@
-<p>user 1 works!</p>
+<form [formGroup]="connectionForm" onsubmit="addInfos()">
+  <input placeholder="dernière tâche" formControlName="lastTask" />
+  <input placeholder="date" formControlName="lastDate" />
+</form>
