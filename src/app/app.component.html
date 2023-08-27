@@ -1,49 +1,21 @@
 <main class="overflow-x-hidden bg-cover bg-no-repeat">
   <h1
-    class="
-      mt-8
-      flex
-      justify-around
-      font-semibold
-      text-6xl text-indigo-700 text-shadow-xl
-    "
+    class="mt-8 flex justify-around font-semibold text-6xl text-indigo-700 text-shadow-xl"
   >
     My todo list
+    <a [routerLink]="['/user1']">user1</a><br />
+    <a [routerLink]="['/user2']">user2</a>
   </h1>
   <aside class="flex flex-row justify-end">
     <input
-      class="
-        fixed
-        focus-border-blue-600
-        h-8
-        px-6
-        m-1
-        rounded-lg
-        border-2 border-blue-600
-        hover:border-blue-700
-      "
+      class="fixed focus-border-blue-600 h-8 px-6 m-1 rounded-lg border-2 border-blue-600 hover:border-blue-700"
       type="text"
       autofocus
       [(ngModel)]="todo"
     />
     <button class="fixed" (click)="addTodo()">+</button>
     <button
-      class="
-        fixed
-        pointer
-        h-12
-        px-6
-        m-2
-        rounded-lg
-        transition-colors
-        duration-200
-        bg-gradient-to-r
-        from-blue-800
-        to-blue-600
-        hover:
-        from-blue-600
-        hover:to-purple-200
-      "
+      class="fixed pointer h-12 px-6 m-2 rounded-lg transition-colors duration-200 bg-gradient-to-r from-blue-800 to-blue-600 hover: from-blue-600 hover:to-purple-200"
       *ngIf="todos.length > 0"
       (click)="deleteAll()"
     >
@@ -60,16 +32,7 @@
           {{ todo }}
         </p>
         <button
-          class="
-            flex
-            self-center
-            items-center
-            pointer
-            h-8
-            px-3
-            bg-blue-600
-            rounded-lg
-          "
+          class="flex self-center items-center pointer h-8 px-3 bg-blue-600 rounded-lg"
           (click)="deleteTodo(i)"
         >
           x
@@ -77,4 +40,5 @@
       </li>
     </ol>
   </section>
+  <router-outlet></router-outlet>
 </main>

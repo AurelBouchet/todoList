@@ -12,6 +12,9 @@ h1 {
   animation-name: slidein;
   background-color: $light-list;
   border: solid 3px $blue-sky-list;
+  a {
+    font-size: 50%;
+  }
 }
 
 @keyframes slidein {

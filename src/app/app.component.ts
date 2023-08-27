@@ -7,16 +7,17 @@ import Swal from 'sweetalert2';
   styleUrls: ['./app.component.scss', './../tailwind.scss'],
 })
 export class AppComponent implements OnInit {
+  todo: string | undefined;
+  recordedList?: string[];
+  todos: string[];
+
   constructor() {
     this.todos = [];
   }
-  todo: any;
-  recordedList: any;
-  todos: any;
 
   ngOnInit() {
     this.recordedList = JSON.parse(localStorage.getItem('list') || '[]');
-    if (this.todos) {
+    if (this.recordedList) {
       for (let todo of this.recordedList) {
         this.todos.push(todo);
       }
@@ -49,7 +50,8 @@ export class AppComponent implements OnInit {
   deleteTodo(i: number) {
     this.todos.splice(i, 1);
     const list = JSON.parse(localStorage.getItem('list') || '{}');
-    for (let i of list) localStorage.removeItem(this.todos);
+    if (list.length) for (let i of list) localStorage.removeItem(i);
+    console.log('2', this.todos);
     this.alert.fire({
       position: 'center',
       icon: 'success',
